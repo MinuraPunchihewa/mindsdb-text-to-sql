@@ -1,5 +1,7 @@
 """Creates the Example and GPT classes for a user to interface with the OpenAI API."""
 
+import os
+import json
 import openai
 import uuid
 
@@ -68,6 +70,23 @@ class GPT:
         """
         assert isinstance(ex, Example), "Please create an Example object."
         self.examples[ex.get_id()] = ex
+
+    def add_examples(self, examples_filepath='config/examples.json'):
+        """Adds many examples to the object from a file.
+
+        By default, the examples.json file in the config directory is used.
+        """
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), examples_filepath), 'r') as examples_file:
+            examples = json.loads(examples_file.read())
+
+        for category, values in examples.items():
+            for example in values:
+                ex = Example(
+                    list(example.keys())[0],
+                    list(example.values())[0]
+                )
+
+                self.examples[ex.get_id()] = ex
 
     def delete_example(self, id):
         """Delete example with the specific id."""
