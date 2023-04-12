@@ -3,7 +3,9 @@
 
   ],
   "select": [
-
+    {
+      "Get all rows from the winequality table of the google_sheets_datasource": "SELECT * FROM google_sheets_datasource.winequality"
+    }
   ],
   "create_model": [
 
