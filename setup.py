@@ -28,8 +28,9 @@ setuptools.setup(
     install_requires=requirements,
     classifiers=(
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        # "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ),
+    package_data={'mindsdb_text_to_sql': ['config/*.json', 'config/*.yml', 'config/*.yaml']},
     python_requires=">=3.7"
 )
