@@ -1,9 +1,11 @@
-from .gpt import GPT
+from .gpt import GPT, set_openai_key
 
 
 class TextToSQL:
-    def __init__(self, engine='davinci', temperature=0.5, max_tokens=100, input_prefix="input: ", input_suffix="\n",
-                 output_prefix="output: ", output_suffix="\n\n", append_output_prefix_to_query=False):
+    def __init__(self, api_key, engine='text-davinci-003', temperature=0, max_tokens=150, input_prefix="input: ", input_suffix="\n",
+                 output_prefix="", output_suffix="", append_output_prefix_to_query=False):
+        set_openai_key(api_key)
+
         self.gpt = GPT(
             engine,
             temperature,
