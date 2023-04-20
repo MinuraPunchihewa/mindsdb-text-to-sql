@@ -6,11 +6,6 @@ import openai
 import uuid
 
 
-def set_openai_key(key):
-    """Sets OpenAI key."""
-    openai.api_key = key
-
-
 class Example:
     """Stores an input, output pair and formats it to prime the model."""
     def __init__(self, inp, out):

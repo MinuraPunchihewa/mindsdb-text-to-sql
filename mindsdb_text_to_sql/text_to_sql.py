@@ -1,4 +1,5 @@
-from .gpt import GPT, set_openai_key
+from mindsdb_text_to_sql import set_openai_key
+from .gpt import GPT
 
 
 class TextToSQL:
