@@ -1,1 +1,1 @@
-from .text_to_sql import TextToSQL
+from .gpt_text_to_sql import TextToSQL
