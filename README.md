@@ -1,6 +1,6 @@
 # MindsDB Text to SQL
 
-MindsDB Text to SQL is a Python package that allows you to convert natural language queries into SQL code that can be run on MindsDB. With this package, you can easily build models using MindsDB's AutoML capabilities by simply describing what you want to predict in natural language.
+MindsDB Text to SQL is a Python package that allows you to convert natural language queries into SQL code that can be run on MindsDB. With this package, you can easily build models using MindsDB's in-database machine learning capabilities by simply describing what you want to predict in natural language.
 
 This package uses the OpenAI API to convert natural language queries into SQL code that can be run on MindsDB.
 
