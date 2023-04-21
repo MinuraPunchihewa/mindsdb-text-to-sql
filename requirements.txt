@@ -1,2 +1,8 @@
 openai
 python-dotenv
+requests
+lxml
+langchain
+unstructured
+chromadb
+tiktoken
