@@ -1,3 +1,3 @@
 {
-  "https://docs.mindsdb.com/data-integrations/all-data-integrations": "/html/body/div[1]/main/div/div[2]/div/div[1]/nav/ul/li[4]/ul/li[10]/ul/li/a"
+  "https://docs.mindsdb.com/data-integrations/all-data-integrations": "//*[@id=\"nav\"]/ul/div[1]/li[10]/ul/li/a"
 }
