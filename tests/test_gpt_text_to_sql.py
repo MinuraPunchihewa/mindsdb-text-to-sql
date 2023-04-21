@@ -15,5 +15,5 @@ class TestGPTTextToSQL(unittest.TestCase):
     def test_select_query(self):
         self.assertEqual(
             self.tts.convert_text_to_sql("Get the top 10 rows from the customer table of the databricks_datasource who earn a salary greater than 100000"),
-            "SELECT * FROM databricks_datasource.customer\nWHEREsalary > 100000;",
+            "SELECT * FROM databricks_datasource.customer\nWHERE salary > 100000\nLIMIT 10;",
         )
