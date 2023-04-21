@@ -12,6 +12,9 @@
       "Get all rows from the winequality table of the google_sheets_datasource": "SELECT * FROM google_sheets_datasource.winequality"
     },
     {
+      "Get the top 5 rows from the winequality table of the google_sheets_datasource": "SELECT * FROM google_sheets_datasource.winequality LIMIT 5"
+    },
+    {
       "Get all rows from the winequality table of the google_sheets_datasource where the quality is greater than 5": "SELECT * FROM google_sheets_datasource.winequality WHERE quality > 5"
     },
     {
@@ -19,6 +22,9 @@
     },
     {
       "Get all rows from the iris table of the sqlite_datasource where the sepal_length is greater than 5": "SELECT * FROM sqlite_datasource.iris WHERE sepal_length > 5"
+    },
+    {
+      "Get the top 5 rows from the iris table of the sqlite_datasource where the sepal_length is greater than 5": "SELECT * FROM sqlite_datasource.iris WHERE sepal_length > 5 LIMIT 5"
     }
   ],
   "create_ml_engine": [
