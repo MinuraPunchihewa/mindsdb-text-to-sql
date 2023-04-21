@@ -2,7 +2,7 @@ import openai
 from .gpt import GPT
 
 
-class TextToSQL:
+class GPTTextToSQL:
     def __init__(self, api_key, engine='text-davinci-003', temperature=0, max_tokens=150, input_prefix="input: ", input_suffix="\n",
                  output_prefix="", output_suffix="", append_output_prefix_to_query=False):
         self._set_openai_key(api_key)
