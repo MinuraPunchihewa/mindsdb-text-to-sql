@@ -1,11 +1,11 @@
-from mindsdb_text_to_sql import set_openai_key
+import openai
 from .gpt import GPT
 
 
 class TextToSQL:
     def __init__(self, api_key, engine='text-davinci-003', temperature=0, max_tokens=150, input_prefix="input: ", input_suffix="\n",
                  output_prefix="", output_suffix="", append_output_prefix_to_query=False):
-        set_openai_key(api_key)
+        self._set_openai_key(api_key)
 
         self.gpt = GPT(
             engine,
@@ -22,4 +22,7 @@ class TextToSQL:
 
     def convert_text_to_sql(self, text):
         return self.gpt.get_top_reply(text)
+
+    def _set_openai_key(self, key):
+        openai.api_key = key
 
