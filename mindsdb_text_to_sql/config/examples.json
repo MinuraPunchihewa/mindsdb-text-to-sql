@@ -42,9 +42,14 @@
       "Check the status of the mindsdb.sentiment_classifier model": "SELECT *\nFROM mindsdb.models\nWHERE name = 'sentiment_classifier';\n"
     }
   ],
-  "predict": [
+  "predict_one": [
     {
       "Predict the sentiment of the review 'I love this product' using the mindsdb.sentiment_classifier model": "SELECT review, sentiment\nFROM mindsdb.sentiment_classifier\nWHERE review = 'I love this product';\n"
+    }
+  ],
+  "predict_bulk": [
+    {
+      "Predict the sentiments of the texts column in the reviews table of the google_sheets_datasource using the mindsdb.sentiment_classifier model": "SELECT output.*, input.*\nFROM google_sheets_datasource.reviews AS input\nJOIN mindsdb.sentiment_classifier AS output"
     }
   ]
 }
