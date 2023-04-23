@@ -29,7 +29,7 @@
   ],
   "create_ml_engine": [
     {
-      "Create a engine called openai2 using api key abc1234567": "CREATE ML_ENGINE openai2\nFROM openai USING\n  \"api_key\": \"abc1234567\";"
+      "Create a engine called openai2 using api key abc1234567": "CREATE ML_ENGINE openai2\nFROM openai USING\n  api_key = \"abc1234567\";"
     }
   ],
   "create_model": [
