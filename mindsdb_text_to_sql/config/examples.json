@@ -29,12 +29,12 @@
   ],
   "create_ml_engine": [
     {
-      "Create a engine called openai2 using api key abc1234567": "CREATE ML_ENGINE openai2\nFROM openai USING\n  \"api_key\": \"abc1234567\"\n};"
+      "Create a engine called openai2 using api key abc1234567": "CREATE ML_ENGINE openai2\nFROM openai USING\n  api_key = \"abc1234567\";"
     }
   ],
   "create_model": [
     {
-      "Create a model called mindsdb.sentiment_classifier using the openai2 engine to predict sentiment using prompt template 'predict the sentiment of the text:{{review}} exactly as either positive or negative or neutral'": "CREATE MODEL mindsdb.sentiment_classifier\nPREDICT sentiment\nUSING\n  engine = 'openai2',\n  prompt_template = 'predict the sentiment of the text:{{review}} exactly as either positive or negative or neutral';\n"
+      "Create a model called mindsdb.sentiment_classifier using the openai2 engine to predict sentiment using prompt template 'predict the sentiment of the text:{{review}} exactly as either positive or negative or neutral'": "CREATE MODEL mindsdb.sentiment_classifier\nPREDICT sentiment\nUSING\n  engine = 'openai2',\n  prompt_template = 'predict the sentiment of the text:{{review}} exactly as either positive or negative or neutral';"
     }
   ],
   "check_model_status": [
@@ -42,9 +42,17 @@
       "Check the status of the mindsdb.sentiment_classifier model": "SELECT *\nFROM mindsdb.models\nWHERE name = 'sentiment_classifier';\n"
     }
   ],
-  "predict": [
+  "predict_one": [
     {
-      "Predict the sentiment of the review 'I love this product' using the mindsdb.sentiment_classifier model": "SELECT review, sentiment\nFROM mindsdb.sentiment_classifier\nWHERE review = 'I love this product';\n"
+      "Predict the sentiment of the review 'I love this product' using the mindsdb.sentiment_classifier model": "SELECT review, sentiment\nFROM mindsdb.sentiment_classifier\nWHERE review = 'I love this product';"
+    }
+  ],
+  "predict_bulk": [
+    {
+      "Predict the sentiments of the reviews table of the google_sheets_datasource using the mindsdb.sentiment_classifier model": "SELECT output.*, input.*\nFROM google_sheets_datasource.reviews AS input\nJOIN mindsdb.sentiment_classifier AS output;"
+    },
+    {
+      "Predict if the data in the spam_data table of the sqlite_datasource is spam or not using the mindsdb.spam_classifier model": "SELECT output.*, input.*\nFROM sqlite_datasource.spam_data AS input\nJOIN mindsdb.spam_classifier AS output;"
     }
   ]
 }
