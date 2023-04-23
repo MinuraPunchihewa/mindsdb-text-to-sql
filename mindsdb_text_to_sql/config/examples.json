@@ -49,7 +49,10 @@
   ],
   "predict_bulk": [
     {
-      "Predict the sentiments of the texts column in the reviews table of the google_sheets_datasource using the mindsdb.sentiment_classifier model": "SELECT output.*, input.*\nFROM google_sheets_datasource.reviews AS input\nJOIN mindsdb.sentiment_classifier AS output"
+      "Predict the sentiments of the review column in the reviews table of the google_sheets_datasource using the mindsdb.sentiment_classifier model": "SELECT output.*, input.*\nFROM google_sheets_datasource.reviews AS input\nJOIN mindsdb.sentiment_classifier AS output"
+    },
+    {
+      "Predict if the input_text column in the spam_data table of the sqlite_datasource is spam or not using the mindsdb.spam_classifier model": "SELECT output.*, input.*\nFROM sqlite_datasource.spam_data AS input\nJOIN mindsdb.spam_classifier AS output;"
     }
   ]
 }
